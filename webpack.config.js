@@ -53,7 +53,6 @@ module.exports = async (env, options) => {
         patterns: [
           { to: "taskpane.css",                   from: "./src/taskpane/taskpane.css" },
           { to: "assets",                         from: "./assets" },
-          { to: "tree-view.component.css",        from: "./src/app/tree-view/tree-view.component.css" },
           { to: "ietest.xml",                     from: "manifest*.xml",
             transform(content) {
               if (dev) {

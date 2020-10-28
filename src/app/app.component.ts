@@ -7,9 +7,7 @@ import { Component, Inject, AfterViewChecked, OnInit, NgZone } from '@angular/co
 // CommonModule supports the use of *ngFor, *ngIf, and Angular directives
 import { CommonModule } from '@angular/common';
 
-/** 
-* An AppComponent renders the contents of the task pane.
-*/
+/** An AppComponent renders the contents of the task pane. */
 @Component({
   selector: 'app-home',
   template: require('./app.component.html'),
@@ -17,8 +15,6 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent implements AfterViewChecked {
   
-  title = 'Sheet = Sheet1, cell = A1';
-
   /** Hides the loading message when the view has been constructed. */
   ngAfterViewChecked() {
     let msg = document.getElementById('loading-msg');

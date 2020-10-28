@@ -1,20 +1,49 @@
  html,
  body {
-  margin:               0;
-  padding:              0;
-}
-
-.viewTitle {
   font-family:          Helvetica, sans-serif;
   font-size:            11pt;
-  color:                #003399;
+  margin:               0;
 }
 
 .pane {
+  color:                #003399;
   margin-left:          5px;
 }
 
-
 #textViewContents {
   font-size:            13pt;
+  margin-left:          5px;
+}
+
+.line {
+  stroke: black;
+}
+
+.target {
+  fill: transparent;
+  stroke: transparent;
+}
+
+svg polygon {
+  stroke: hsl(0, 0%, 0%);
+  fill: black;
+}
+
+svg rect {
+  fill: white;
+  stroke: black;
+}
+
+svg text {
+  font-size: 15px;
+  text-anchor: middle;
+  pointer-events: none;
+  stroke: black;
+}
+
+.value {
+  stroke: grey;
+  border: none;
+  font-size: 80%;
+  text-anchor: start;
 }

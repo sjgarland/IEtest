@@ -8,17 +8,10 @@ import { CommonModule } from '@angular/common';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { FormulaViewsComponent } from './formula-views/formula-views.component';
-import { TextViewComponent } from './text-view/text-view.component';
-import { TreeViewComponent } from './tree-view/tree-view.component';
-
 
 @NgModule({
   declarations: [
-    AppComponent,
-    FormulaViewsComponent,
-    TextViewComponent,
-    TreeViewComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

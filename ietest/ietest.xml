@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <!-- This is a new GUID.                                                                        -->
+  <Id>831a07ae-51e6-4dcd-b409-584c1a3174f7</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Stage One Software</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <!-- The DisplayName is used in the Office store and in the Office UI add-ins dialog.            -->
+  <DisplayName DefaultValue="IEtest"/>
+  <Description DefaultValue="Tests ability of Internet Explorer 11 to load a task pane"/>
+  <!-- Icon for the personality menu.                                                              -->
+  <IconUrl DefaultValue="https://formulaforge.com/ietest/assets/fx32.png"/>
+  <!--Icon used by the Office Store, add-in installation, and task panes                           -->
+  <HighResolutionIconUrl DefaultValue="https://formulaforge.com/ietest/assets/fx64.png"/>
+  <SupportUrl DefaultValue="https://formulaforge.com/Support.html"/>
+  <AppDomains>
+     <!-- These domains open in a task pane.  Others open in a new browser window.                 -->
+    <AppDomain>https://localhost:3000</AppDomain>
+    <AppDomain>https://formulaforge.com</AppDomain>
+  </AppDomains>
+
+  <!-- TaskPane Mode integration                                                                   -->
+  <Hosts>
+    <Host Name="Workbook"/>
+    <!-- Different hosts can have different sets of commands, specified below in VersionOverrides. -->
+    <!-- A host can be an Excel Workbook, a Word Document, or a PowerPoint Presentation.           -->
+  </Hosts>  
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://formulaforge.com/ietest/taskpane.html"/>           <!-- Important -->
+  </DefaultSettings>
+
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <!-- Commands Mode integration                                                                   -->
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" 
+                    xsi:type="VersionOverridesV1_0">
+    <!-- A list of the Hosts named above that have overridden behavior.                            -->
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <!-- Only the DesktopFormFactor exists.  A TabletFormFactor and PhoneFormFactor may come.  -->
+        <DesktopFormFactor>
+           <!-- The FunctionFile is an HTML page that provides JavaScript function definitions.    -->
+           <!-- This page is made available at the URL defined below by code in webpack.config.js. -->
+          <FunctionFile resid="Commands.Url" />
+          <!-- The PrimaryCommandSurface is the main Office Ribbon.                                -->
+          <!-- An ExtensionPoint can also have type ContextMenu.                                   -->
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <!-- An OfficeTab extends an existing tab.  A CustomTab creates a new tab.             -->
+            <!-- Each tab is divided into groups of controls, which are either Buttons or Menus.   -->
+            <!-- Icon sizes 16, 32, 80 are required; sizes 20, 24, 40, 48, 64 are optional.        -->
+            <!-- The action taken on a control click can be ExecuteFunction or ShowTaskPane.       -->
+            <OfficeTab id="TabHome">
+
+              <!-- ActionGroup                                                                     -->
+              <Group id="IEtest.ActionGroup">
+                <Label resid="ActionGroup.Label" />
+                <Icon>
+                  <bt:Image size="16" resid="Icon16" />
+                  <bt:Image size="32" resid="Icon32" />
+                  <bt:Image size="64" resid="Icon64" />
+                  <bt:Image size="80" resid="Icon80" />
+                </Icon>
+
+                <Control xsi:type="Button" id="Formula.ViewButton">
+                  <Label resid="View.Label" />
+                  <Supertip>
+                    <Title resid="View.Label" />
+                    <Description resid="View.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon16" />
+                    <bt:Image size="32" resid="Icon32" />
+                    <bt:Image size="64" resid="Icon64" />
+                    <bt:Image size="80" resid="Icon80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>IEtest.TaskpaneView</TaskpaneId>
+                    <SourceLocation resid="TaskpaneView.Url" />             <!-- Taskpane contents -->
+                    <Title resid="View.Title" />                            <!-- Taskpane title    -->
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <!--The URLs for all resources should use https.                                               -->
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon16" DefaultValue="https://formulaforge.com/ietest/assets/fx16.png"/>
+        <bt:Image id="Icon32" DefaultValue="https://formulaforge.com/ietest/assets/fx32.png"/>
+        <bt:Image id="Icon64" DefaultValue="https://formulaforge.com/ietest/assets/fx64.png"/>
+        <bt:Image id="Icon80" DefaultValue="https://formulaforge.com/ietest/assets/fx80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="Commands.Url" DefaultValue="https://formulaforge.com/ietest/commands.html" />
+        <bt:Url id="TaskpaneView.Url" DefaultValue="https://formulaforge.com/ietest/taskpane.html" />
+      </bt:Urls>
+      <bt:ShortStrings>                                                    <!-- Max 125 characters -->
+        <bt:String id="ActionGroup.Label" DefaultValue="IE Test" />
+        <bt:String id="View.Label" DefaultValue="Show Taskpane" />
+        <bt:String id="View.Title" DefaultValue="IEtest" />
+      </bt:ShortStrings>
+      <bt:LongStrings>                                                     <!-- Max 250 characters -->
+        <bt:String id="View.Tooltip" DefaultValue="Click to view the task pane" />
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+
+</OfficeApp>

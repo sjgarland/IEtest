@@ -1,0 +1,20 @@
+ html,
+ body {
+  margin:               0;
+  padding:              0;
+}
+
+.viewTitle {
+  font-family:          Helvetica, sans-serif;
+  font-size:            11pt;
+  color:                #003399;
+}
+
+.pane {
+  margin-left:          5px;
+}
+
+
+#textViewContents {
+  font-size:            13pt;
+}

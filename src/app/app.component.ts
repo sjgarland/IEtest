@@ -3,9 +3,7 @@
 * Copyright (c) 2019-2020 Stage One Software.  All rights reserved.
 *-----------------------------------------------------------------*/
 
-import { Component, Inject, AfterViewChecked, OnInit, NgZone } from '@angular/core';
-// CommonModule supports the use of *ngFor, *ngIf, and Angular directives
-import { CommonModule } from '@angular/common';
+import { Component, AfterViewChecked } from '@angular/core';
 
 /** An AppComponent renders the contents of the task pane. */
 @Component({

@@ -7,10 +7,11 @@
 import 'zone.js'; // Required by Angular to define asynchronous execution contexts
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from '../app/app.module';
-// BrowserModule needs to be imported only in the root component; it includes CommonModule
-// import { BrowserModule } from '@angular/platform-browser';
-import { Component } from '@angular/core';
+
+document.getElementById('loading-msg').innerHTML += '<p>Running taskpane.js</p>';
 
 Office.initialize = reason => {
+  document.getElementById('loading-msg').innerHTML += '<p>Office initialized</p>';
+
   platformBrowserDynamic().bootstrapModule(AppModule).catch(error => console.error(error));
 };

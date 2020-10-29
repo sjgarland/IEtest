@@ -14,7 +14,7 @@ It does not load successfully in Excel 2013+ or Excel 2016+ because those versio
 
 Microsoft has announced that it is discontinuing support for Internet Explorer.  However, it is hard to see how it can do that without also discontinuing support for Excel 2013+ and Excel 2106+.
 
-Internet Explorer 11 produces the following error messages in its console log.
+Internet Explorer 11 fails to load and execute `taskpane.js`, as evidenced by the fact that its console log does not contain either of the messages written by `taskpane.js`.  Instead it contains the following error messages.
 
     SCRIPT5022: Office.js has not fully loaded. Your app must call "Office.onReady()" as part of it's loading sequence (or set the "Office.initialize" function). If your app has this functionality, try reloading this page.
     office.js (46,28063)

@@ -8,10 +8,9 @@ import 'zone.js'; // Required by Angular to define asynchronous execution contex
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from '../app/app.module';
 
-document.getElementById('loading-msg').innerHTML += '<p>Running taskpane.js</p>';
+console.log('Running taskpane.js');
 
 Office.initialize = reason => {
-  document.getElementById('loading-msg').innerHTML += '<p>Office initialized</p>';
-
+  console.log('Office initialized');
   platformBrowserDynamic().bootstrapModule(AppModule).catch(error => console.error(error));
 };

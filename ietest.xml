@@ -9,9 +9,9 @@
   <DisplayName DefaultValue="IEtest"/>
   <Description DefaultValue="Tests ability of Internet Explorer 11 to load a task pane"/>
   <!-- Icon for the personality menu.                                                              -->
-  <IconUrl DefaultValue="https://formulaforge.com/ietest/assets/fx32.png"/>
+  <IconUrl DefaultValue="https://formulaforge.com/ietest/assets/icon-32.png"/>
   <!--Icon used by the Office Store, add-in installation, and task panes                           -->
-  <HighResolutionIconUrl DefaultValue="https://formulaforge.com/ietest/assets/fx64.png"/>
+  <HighResolutionIconUrl DefaultValue="https://formulaforge.com/ietest/assets/icon-80.png"/>
   <SupportUrl DefaultValue="https://formulaforge.com/Support.html"/>
   <AppDomains>
      <!-- These domains open in a task pane.  Others open in a new browser window.                 -->
@@ -57,7 +57,6 @@
                 <Icon>
                   <bt:Image size="16" resid="Icon16" />
                   <bt:Image size="32" resid="Icon32" />
-                  <bt:Image size="64" resid="Icon64" />
                   <bt:Image size="80" resid="Icon80" />
                 </Icon>
 
@@ -70,7 +69,6 @@
                   <Icon>
                     <bt:Image size="16" resid="Icon16" />
                     <bt:Image size="32" resid="Icon32" />
-                    <bt:Image size="64" resid="Icon64" />
                     <bt:Image size="80" resid="Icon80" />
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
@@ -89,10 +87,9 @@
     <!--The URLs for all resources should use https.                                               -->
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon16" DefaultValue="https://formulaforge.com/ietest/assets/fx16.png"/>
-        <bt:Image id="Icon32" DefaultValue="https://formulaforge.com/ietest/assets/fx32.png"/>
-        <bt:Image id="Icon64" DefaultValue="https://formulaforge.com/ietest/assets/fx64.png"/>
-        <bt:Image id="Icon80" DefaultValue="https://formulaforge.com/ietest/assets/fx80.png"/>
+        <bt:Image id="Icon16" DefaultValue="https://formulaforge.com/ietest/assets/icon-16.png"/>
+        <bt:Image id="Icon32" DefaultValue="https://formulaforge.com/ietest/assets/icon-32.png"/>
+        <bt:Image id="Icon80" DefaultValue="https://formulaforge.com/ietest/assets/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
         <bt:Url id="Commands.Url" DefaultValue="https://formulaforge.com/ietest/commands.html" />
